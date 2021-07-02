@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure, text
 import pandas as pd
 import requests
+
 url = "https://docs.google.com/spreadsheets/d/1uo_oC3HfWpbV1FDQjrVdNyxgsEzDFs7qV3IUPa9N4kQ/edit#gid=0"
 sheet_url = "https://docs.google.com/spreadsheets/d/1uo_oC3HfWpbV1FDQjrVdNyxgsEzDFs7qV3IUPa9N4kQ/edit#gid=0"
 url_1 = sheet_url.replace( '/edit#gid=', '/export?format=csv&gid=')
@@ -65,7 +66,7 @@ def find_groups(min_occurences):
         x=0
         for pair in pairs:
             x=x+1
-            if pairs[pair] > min_occurences:
+            if pairs[pair] > min_occurences-1:
                 counter += 1
                 groupings.append(pair)
         total += counter
@@ -95,7 +96,7 @@ def find_max_overlap(min_occurences):
         x=0
         for pair in pairs:
             x=x+1
-            if pairs[pair] > min_occurences:
+            if pairs[pair] > min_occurences-1:
                 counter += 1
                 groupings.append(pair)
         total += counter
