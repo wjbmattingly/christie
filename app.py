@@ -2,7 +2,6 @@ import streamlit as st
 import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure, text
-from pyvis.network import Network
 import pandas as pd
 
 
