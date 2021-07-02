@@ -130,7 +130,6 @@ for node in G:
 d = nx.degree(G)
 d = [(d[node]+1) * 40 for node in G.nodes()]
 import math
-import pydot
 pos = nx.spring_layout(G, k=10/math.sqrt(G.order()))
 from matplotlib.pyplot import figure
 fig = figure(figsize=(30, 30))
