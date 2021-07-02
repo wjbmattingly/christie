@@ -3,11 +3,16 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure, text
 import pandas as pd
-
+import requests
+url = "https://docs.google.com/spreadsheets/d/1uo_oC3HfWpbV1FDQjrVdNyxgsEzDFs7qV3IUPa9N4kQ/edit#gid=0"
+sheet_url = "https://docs.google.com/spreadsheets/d/1uo_oC3HfWpbV1FDQjrVdNyxgsEzDFs7qV3IUPa9N4kQ/edit#gid=0"
+url_1 = sheet_url.replace( '/edit#gid=', '/export?format=csv&gid=')
 
 st.title("Christie Pavey's Council App")
 
-df = pd.read_csv("data/council_data_new.csv")
+df = pd.read_csv(url_1)
+
+
 councils = df["council"].values.tolist()
 councils = list(set(councils))
 all_data  = {}
